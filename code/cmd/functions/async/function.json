@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "async",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "%ASB_TOPIC_NAME%",
+      "subscriptionName": "%ASB_SUBSCRIPTION_NAME%",
+      "connection": "AZURE_ASB_CONNECTION_STRING"
+    }
+  ]
+}
