@@ -23,7 +23,9 @@ func (r *repo) GetEntities() ([]internal.Entity, error) {
 	var anError error = nil
 	//var anError error = errors.New("error")
 
-	return []internal.Entity{internal.NewEntity(10, "Pant")}, anError
+	entity, _ := internal.NewEntity(10, "Pant")
+
+	return []internal.Entity{entity}, anError
 }
 
 func (r *repo) SaveEntity(e internal.Entity) {

@@ -16,8 +16,9 @@ type repo struct {
 func (r *repo) GetEntities() ([]internal.Entity, error) {
 	var anError error = nil
 	//var anError error = errors.New("error")
+	entity, _ := internal.NewEntity(10, "Pant")
 
-	return []internal.Entity{internal.NewEntity(10, "Pant")}, anError
+	return []internal.Entity{entity}, anError
 }
 
 func (r *repo) SaveEntity(e internal.Entity) {

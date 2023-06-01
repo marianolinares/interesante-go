@@ -24,9 +24,9 @@ func CreateHandler(useCase registerStock.UseCase) func(http.ResponseWriter, *htt
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		body := parseBody(r)
-		mappedEntity := internal.NewEntity(body.Legs, body.Name)
+		mappedEntity, _ := internal.NewEntity(body.Legs, body.Name)
 
-		useCase.Execute(mappedEntity)
+		useCase.Execute(r.Context(), mappedEntity)
 
 		fmt.Println(body)
 		fmt.Println(mappedEntity)

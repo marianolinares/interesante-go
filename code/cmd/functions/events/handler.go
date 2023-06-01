@@ -13,7 +13,9 @@ func CreateHandler(entityRepo internal.EntityRepo) func(http.ResponseWriter, *ht
 		if name != "" {
 			message = fmt.Sprintf("Hello, %s. This HTTP triggered function executed successfully.\n", name)
 
-			entityRepo.SaveEntity(internal.NewEntity(10, name))
+			testEntity, _ := internal.NewEntity(10, name)
+
+			entityRepo.SaveEntity(testEntity)
 		}
 		fmt.Fprint(w, message)
 	}
